@@ -24,12 +24,15 @@ jobs:
 
       - name: Sync Images
         run: |
-          echo "Listing files in temp_images:"
-          ls -R temp_images
           mkdir -p images
-          # Copy content from temp_images. If images are in a subfolder, this handles it.
-          # We use dot to copy hidden files if any, and avoid issues with empty wildcards.
-          cp -rn temp_images/* images/ || true
+          if [ -d "temp_images/images" ]; then
+            echo "Detected 'images' folder in private repo. Extracting contents..."
+            cp -rn temp_images/images/* images/
+          else
+            echo "No 'images' folder detected. Copying files from root..."
+            # Copy all files from root, excluding the temp_images directory itself
+            cp -rn temp_images/* images/ 2>/dev/null || true
+          fi
           echo "Final images directory structure:"
           ls -R images
           rm -rf temp_images
