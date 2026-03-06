@@ -1,0 +1,132 @@
+/* ================================================================
+   article.css — Styles for individual blog post pages
+   ================================================================ */
+
+/* ───────────── Article Header ───────────── */
+.article-header {
+    margin-bottom: 48px;
+}
+
+.article-back {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 24px;
+    transition: color var(--transition-fast);
+}
+
+.article-back:hover {
+    color: var(--text);
+    opacity: 1;
+}
+
+.article-header h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ───────────── Article Prose ───────────── */
+.article-prose {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    max-width: 680px;
+}
+
+.article-lead {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    line-height: 1.75;
+}
+
+.article-prose p {
+    margin-bottom: 22px;
+}
+
+.article-prose h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-top: 48px;
+    margin-bottom: 14px;
+}
+
+.article-prose h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 32px;
+    margin-bottom: 10px;
+}
+
+.article-prose a {
+    color: var(--text);
+    text-underline-offset: 3px;
+}
+
+/* ───────────── Blockquote ───────────── */
+.article-prose blockquote {
+    margin: 32px 0;
+    padding: 20px 24px;
+    border-left: 3px solid var(--border);
+    background-color: var(--card-bg);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.article-prose blockquote p {
+    margin-bottom: 8px;
+    font-style: italic;
+    color: var(--text);
+}
+
+.article-prose blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.article-prose blockquote cite {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-style: normal;
+    color: var(--text-muted);
+}
+
+/* ───────────── Lists ───────────── */
+.article-prose ul,
+.article-prose ol {
+    margin: 0 0 22px 22px;
+    color: var(--text);
+}
+
+.article-prose li {
+    margin-bottom: 6px;
+}
+
+.article-prose li em {
+    font-style: italic;
+}
+
+/* ───────────── Article Footer ───────────── */
+.article-footer {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pictures — Luca Predieri</title>
+    <meta name="description"
+        content="A collection of photos by Luca Predieri — mountains, engineering, travels, and moments." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-brand">Luca Predieri</a>
+            <div class="header-right">
+                <nav class="site-nav">
+                    <a href="about.html" class="nav-link">about</a>
+                    <a href="pictures.html" class="nav-link active">pictures</a>
+                    <a href="blog.html" class="nav-link">blog</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content gallery-main">
+        <div class="page-content">
+            <header class="page-header">
+                <h1>Pictures</h1>
+                <p class="page-meta">Moments worth keeping.</p>
+            </header>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="galleryGrid">
+
+                <button class="gallery-card" data-title="Alpine Peaks at Golden Hour"
+                    data-desc="The mountains have always been a place of refuge and wonder for me. There is something about the scale of the peaks and the quality of the light at dusk that makes everything else feel appropriately small."
+                    data-src="images/photo_mountains.jpg" aria-label="Open photo: Alpine Peaks at Golden Hour">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_mountains.jpg" alt="Alpine mountain peaks at golden hour"
+                            loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="gallery-card" data-title="Inside the Machine"
+                    data-desc="Most of my professional life lives at this scale — logic gates, register addresses, and silicon talking to the physical world. There is an elegance to embedded systems that I find hard to explain to people who haven't stared at an oscilloscope trace at 2am."
+                    data-src="images/photo_electronics.jpg" aria-label="Open photo: Inside the Machine">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_electronics.jpg" alt="Electronic circuit board with DSP chips"
+                            loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="gallery-card" data-title="Norwegian Fjords, Erasmus+"
+                    data-desc="Two years studying at NTNU in Trondheim introduced me to a new kind of silence. Norwegian winters are severe and beautiful in equal measure — and they have a way of making you very focused."
+                    data-src="images/photo_norway.jpg" aria-label="Open photo: Norwegian Fjords">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_norway.jpg" alt="Norwegian fjord in winter" loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="gallery-card" data-title="The California Coast"
+                    data-desc="In 2015–2016 I spent almost a year as an exchange student in Santa Cruz, California. The Pacific coast changed the way I think about space — everything is vast, and light behaves differently there."
+                    data-src="images/photo_california.jpg" aria-label="Open photo: The California Coast">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_california.jpg" alt="California coastal cliffs at sunset"
+                            loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="gallery-card" data-title="Summit View"
+                    data-desc="Hiking is how I reset. The goal is never really the summit — it is the few hours of walking where your thoughts have room to untangle. The summit is just an excuse to stop and look."
+                    data-src="images/photo_hiking.jpg" aria-label="Open photo: Summit View">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_hiking.jpg" alt="Hiker resting at mountain summit with panoramic view"
+                            loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="gallery-card" data-title="The Workbench"
+                    data-desc="The place where software meets hardware. Between the oscilloscope, the DSP board, and the stack of datasheets, this is where the interesting problems live. I find the intersection of digital logic and physical reality endlessly fascinating."
+                    data-src="images/photo_workspace.jpg" aria-label="Open photo: The Workbench">
+                    <div class="gallery-card-img-wrap">
+                        <img src="images/photo_workspace.jpg"
+                            alt="Engineering workstation with oscilloscope and robotics components" loading="lazy" />
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-zoom">↗</span>
+                        </div>
+                    </div>
+                </button>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <div class="lightbox-inner">
+            <div class="lightbox-img-wrap">
+                <img src="" alt="" id="lightboxImg" class="lightbox-img" />
+            </div>
+            <div class="lightbox-info">
+                <h2 class="lightbox-title" id="lightboxTitle"></h2>
+                <p class="lightbox-desc" id="lightboxDesc"></p>
+            </div>
+        </div>
+    </div>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="gallery.js"></script>
+</body>
+
+</html>

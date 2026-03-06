@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog — Luca Predieri</title>
+    <meta name="description"
+        content="Writing by Luca Predieri — thoughts on embedded systems, robotics, philosophy, and tools." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-brand">Luca Predieri</a>
+            <div class="header-right">
+                <nav class="site-nav">
+                    <a href="about.html" class="nav-link">about</a>
+                    <a href="pictures.html" class="nav-link">pictures</a>
+                    <a href="blog.html" class="nav-link active">blog</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        <article class="page-content">
+            <header class="page-header">
+                <h1>Writing</h1>
+                <p class="hero-subtitle">A place where I write things for the internet.</p>
+            </header>
+
+            <!-- Blog Posts List -->
+            <div class="blog-list">
+
+                <a href="posts/antigravity-speed.html" class="blog-card">
+                    <div class="blog-card-body">
+                        <h2 class="blog-card-title">Writing Code at the Speed of Thought with Antigravity</h2>
+                        <p class="blog-card-excerpt">
+                            There's a particular kind of friction in software development that has nothing to do with
+                            hard problems.
+                            It's the friction of switching contexts, searching documentation, and mentally tracking five
+                            things at once.
+                            For a long time I thought this was just the job. Then I started using Antigravity.
+                        </p>
+                        <div class="blog-card-meta">
+                            <time>March 6, 2026</time>
+                            <span>·</span>
+                            <span>6 minutes</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="posts/kierkegaard-choice.html" class="blog-card">
+                    <div class="blog-card-body">
+                        <h2 class="blog-card-title">Either/Or — Kierkegaard on the One Choice That Defines You</h2>
+                        <p class="blog-card-excerpt">
+                            Imagine you're standing in a queue at the supermarket. You could grab a chocolate bar —
+                            instant
+                            pleasure, zero consequences. Søren Kierkegaard, the 19th-century Danish philosopher with
+                            arguably
+                            the best name in philosophy, would say that this moment is actually cosmically significant.
+                            No pressure.
+                        </p>
+                        <div class="blog-card-meta">
+                            <time>March 6, 2026</time>
+                            <span>·</span>
+                            <span>8 minutes</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
