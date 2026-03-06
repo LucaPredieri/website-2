@@ -25,17 +25,25 @@ jobs:
       - name: Sync Images
         run: |
           mkdir -p images
+          echo "==== Private Repo Content ===="
+          ls -R temp_images
+          
           if [ -d "temp_images/images" ]; then
-            echo "Detected 'images' folder in private repo. Extracting contents..."
+            echo "Detected 'images' folder in private repo. Extracting..."
             cp -rn temp_images/images/* images/
           else
-            echo "No 'images' folder detected. Copying files from root..."
-            # Copy all files from root, excluding the temp_images directory itself
+            echo "No 'images' folder detected. Copying from root..."
             cp -rn temp_images/* images/ 2>/dev/null || true
           fi
-          echo "Final images directory structure:"
-          ls -R images
+          
+          echo "==== Final Public images/ folder ===="
+          ls -la images/
+          
+          # Remove temp folder
           rm -rf temp_images
+          
+          # CRITICAL: Remove .gitignore so the deployment action doesn't ignore our images!
+          rm .gitignore
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
