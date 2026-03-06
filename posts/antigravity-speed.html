@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing Code at the Speed of Thought with Antigravity · Luca Predieri</title>
+    <meta name="description"
+        content="How I started using Antigravity to develop software dramatically faster — what changed, what surprised me, and why it matters for engineers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../article.css" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="site-brand">Luca Predieri</a>
+            <div class="header-right">
+                <nav class="site-nav">
+                    <a href="../about.html" class="nav-link">about</a>
+                    <a href="../pictures.html" class="nav-link">pictures</a>
+                    <a href="../blog.html" class="nav-link active">blog</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <article class="page-content article-body">
+
+            <header class="article-header">
+                <a href="../blog.html" class="article-back">← Writing</a>
+                <h1>Writing Code at the Speed of Thought with Antigravity</h1>
+                <div class="article-meta">
+                    <time datetime="2026-03-06">March 6, 2026</time>
+                    <span>·</span>
+                    <span>6 minutes</span>
+                </div>
+            </header>
+
+            <div class="article-prose">
+
+                <p class="article-lead">
+                    There's a particular kind of friction in software development that has nothing to do with hard
+                    problems.
+                    It's the friction of switching contexts, searching documentation, writing boilerplate, and mentally
+                    tracking five things at once. For a long time I thought this was just the job. Then I started
+                    using Antigravity.
+                </p>
+
+                <h2>The Problem with "Normal" Development</h2>
+                <p>
+                    If you've worked on embedded systems or any complex codebase, you know the rhythm. You have a mental
+                    model of what needs to happen. You start typing. Then you stop — because you need to look up the
+                    exact register offset, the return type of a library function, the project file structure you haven't
+                    touched in six weeks. You break flow. You rebuild it. You break it again.
+                </p>
+                <p>
+                    Multiply this across a day of work and you realise that a significant portion of your time isn't
+                    spent <em>thinking</em> — it's spent navigating. Navigation is not engineering.
+                </p>
+
+                <h2>What Antigravity Actually Does</h2>
+                <p>
+                    Antigravity is an agentic AI coding assistant. But calling it an autocomplete tool would be like
+                    calling a CNC machine a fancy chisel. The difference is in agency: Antigravity doesn't just
+                    suggest your next line of code — it understands your project, browses files, runs commands,
+                    reads documentation, and executes multi-step tasks on your behalf.
+                </p>
+                <p>
+                    In practice, this means I can say something like: <em>"Refactor the EtherCAT message handler to
+                        use a ring buffer and add error logging"</em> — and watch it happen, with diffs for me to
+                    review,
+                    rather than spending an hour doing it manually.
+                </p>
+
+                <h2>The Shift in How I Think About Tasks</h2>
+                <p>
+                    The most unexpected change wasn't speed — it was granularity. When you know a task can be expressed
+                    as a clear instruction and executed reliably, you start breaking work into smaller, more intentional
+                    units. I find myself thinking more precisely about <em>what</em> I want before I ask for it.
+                </p>
+                <p>
+                    This is a good habit, and Antigravity reinforces it. Vague prompts produce vague results. Precise
+                    intent produces precise code. The tool is a forcing function for clarity.
+                </p>
+
+                <h2>What It Doesn't Replace</h2>
+                <p>
+                    Engineering judgment. System architecture. The deep understanding of why a DSP peripheral behaves
+                    unexpectedly at high clock speeds. Antigravity is extraordinarily fast at <em>execution</em>,
+                    but it doesn't replace the engineer — it amplifies one.
+                </p>
+                <p>
+                    I still review every change. I still run and debug the code myself. But the ratio of
+                    thinking-to-typing has shifted dramatically in favour of thinking. That's how it should be.
+                </p>
+
+                <h2>A Concrete Example: This Website</h2>
+                <p>
+                    This website — the one you're reading right now — was built with Antigravity. I described the
+                    design direction, referenced an existing site I liked, shared my personal information, and asked
+                    for two blog articles on topics I care about. The static HTML, CSS, and JavaScript were produced
+                    and iterated on in a single session, including light/dark mode, responsive layout, and the ability
+                    to easily add content later.
+                </p>
+                <p>
+                    Total time: under an hour. The equivalent manual effort would have been a full afternoon.
+                </p>
+
+                <h2>The Broader Point</h2>
+                <p>
+                    There is a productivity threshold beyond which you stop thinking about development speed and start
+                    thinking about what to build next. Antigravity has pushed me closer to that threshold. For an
+                    embedded engineer who cares about shipping real things — hardware that works, software that
+                    doesn't corrupt memory — that's significant.
+                </p>
+                <p>
+                    The best tools disappear. They stop being the thing you're using and become the way you work.
+                    Antigravity is getting there.
+                </p>
+
+            </div>
+
+            <footer class="article-footer">
+                <a href="../blog.html" class="article-back">← Back to Writing</a>
+            </footer>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+
+</html>
