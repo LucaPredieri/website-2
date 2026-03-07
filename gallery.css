@@ -31,10 +31,12 @@
     flex-direction: column;
     text-align: left;
     transition: transform 200ms ease, box-shadow 200ms ease;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .gallery-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
@@ -57,10 +59,13 @@
     object-fit: cover;
     display: block;
     transition: transform 400ms ease;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .gallery-card:hover .gallery-card-img-wrap img {
-    transform: scale(1.04);
+    transform: scale(1.04) translateZ(0);
 }
 
 /* Hover overlay */
