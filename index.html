@@ -22,8 +22,14 @@
       <a href="index.html" class="site-brand">Luca Predieri</a>
       <div class="header-right">
         <nav class="site-nav">
-          <a href="about.html" class="nav-link">about</a>
-          <a href="pictures.html" class="nav-link">moments</a>
+          <a href="about.html" class="nav-link">
+            <span class="lang-en">about</span>
+            <span class="lang-it">chi sono</span>
+          </a>
+          <a href="pictures.html" class="nav-link">
+            <span class="lang-en">moments</span>
+            <span class="lang-it">attimi</span>
+          </a>
           <a href="blog.html" class="nav-link">blog</a>
         </nav>
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
@@ -36,11 +42,21 @@
   <!-- ===== HERO ===== -->
   <main class="main-content">
     <section class="hero">
-      <h1 class="hero-title">Hi, I'm Luca.</h1>
+      <h1 class="hero-title">
+        <span class="lang-en">Hi, I'm Luca.</span>
+        <span class="lang-it">Ciao! Sono Luca.</span>
+      </h1>
       <p class="hero-subtitle">
-        I build <a href="about.html#experience">embedded systems</a>, deepen <a href="about.html#education">modern
-          software</a>,
-        live the mountains, and occasionally <a href="blog.html">write</a>.
+        <span class="lang-en">
+          I build <a href="about.html#experience">embedded systems</a>, deepen <a href="about.html#education">modern
+            software</a>,
+          live the mountains, and occasionally <a href="blog.html">write</a>.
+        </span>
+        <span class="lang-it">
+          Sviluppo <a href="about.html#experience">sistemi e software embedded</a>, mi diverto con il <a
+            href="about.html#education">software</a> a 360°,
+          respiro la montagna e ogni tanto <a href="blog.html">scrivo</a>.
+        </span>
       </p>
 
       <!-- Social Icons -->
@@ -72,7 +88,12 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+      <button class="lang-toggle" aria-label="Switch language" title="Switch language">
+        <span class="lang-icon"></span>
+      </button>
+    </div>
   </footer>
 
   <script src="main.js"></script>

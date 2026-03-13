@@ -16,9 +16,10 @@
 
     // ── Open ────────────────────────────────────────────────────
     function openLightbox(card) {
+        const lang = document.documentElement.getAttribute('lang') || 'en';
         const src = card.dataset.src;
-        const title = card.dataset.title;
-        const desc = card.dataset.desc;
+        const title = card.dataset[`title${lang === 'en' ? 'En' : 'It'}`] || card.dataset.title;
+        const desc = card.dataset[`desc${lang === 'en' ? 'En' : 'It'}`] || card.dataset.desc;
 
         lightboxImg.src = src;
         lightboxImg.alt = title;

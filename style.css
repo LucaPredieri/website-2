@@ -66,6 +66,15 @@ body {
   transition: background-color var(--transition-med), color var(--transition-med);
 }
 
+/* ───────────── Language Visibility ───────────── */
+:root:not([lang="it"]) .lang-it {
+  display: none !important;
+}
+
+:root[lang="it"] .lang-en {
+  display: none !important;
+}
+
 a {
   color: var(--text-link);
   text-decoration: underline;
@@ -151,8 +160,9 @@ a:hover {
   border-radius: 2px;
 }
 
-/* ───────────── Theme Toggle ───────────── */
-.theme-toggle {
+/* ───────────── Icon Toggles ───────────── */
+.theme-toggle,
+.lang-toggle {
   background: none;
   border: none;
   cursor: pointer;
@@ -167,9 +177,23 @@ a:hover {
   line-height: 1;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.lang-toggle:hover {
   background-color: var(--border);
   color: var(--text);
+}
+
+.lang-icon svg,
+.theme-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ───────────── Main Content ───────────── */
@@ -400,12 +424,31 @@ section>p {
 
 /* ───────────── Footer ───────────── */
 .site-footer {
-  text-align: center;
   padding: 32px 20px;
   font-size: 0.82rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
   transition: border-color var(--transition-med);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 /* ───────────── Responsive ───────────── */
