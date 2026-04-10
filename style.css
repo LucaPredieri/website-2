@@ -87,6 +87,44 @@ a:hover {
   opacity: 0.7;
 }
 
+.stars-link {
+  display: inline-flex;
+  padding: 8px 16px;
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  text-decoration: none !important;
+  color: var(--text-muted) !important;
+  transition: all var(--transition-med);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.stars-link:hover {
+  border-color: var(--text);
+  color: var(--text) !important;
+  background: radial-gradient(circle at center, var(--border) 0%, transparent 80%);
+  opacity: 1;
+  transform: translateY(-1px);
+  animation: shimmerGlow 2s infinite alternate ease-in-out;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .stars-link:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes shimmerGlow {
+  from {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(129, 140, 248, 0.05);
+  }
+
+  to {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.15);
+  }
+}
+
 /* ───────────── Header ───────────── */
 .site-header {
   position: sticky;

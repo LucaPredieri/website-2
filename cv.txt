@@ -1,0 +1,63 @@
+Embedded Systems Engineer
+Moog Inc., Full-Time
+Casella, Italy
+September 2023– Present
+I am presently serving as an embedded software engineer at Moog, a globally renowned leader in the field of
+automation engineering. My primary responsibilities revolve around software development and conducting
+comprehensive research, with a particular focus on the interplay between software and hardware, as well as
+mechanical control. My work focussed on the developmente of the latest products available in the market.
+The work was focussed mainly of DSP families by Texas Instruments.- Development of firmware for C2000 DSP based products, such as servo-drives, and PSUs.- Developing code for peripherals such as SPI, SCI, I2C, DMAs, GPIOs, Timers, UART, DACs, ADCs and
+PWMs.- Held on-hand tests on board prototypes, used a wide range of laboratory instruments such as oscilloscopes,
+multi-meters, DC supplies and others.- We discuss design choices for hardware on prototypes.- Developing and analyzing solutions for Cyber Resilience Act (CRA) for our products.- Moog Italy AI Ambassador for improving our code development with AI tools, such as Codex, Antigravity,
+Claude and other agent like tools.- Deepen my personal knowledge on development of electronic boards, in an industrial and operations point
+of view. In the site operations, quality, R&D and production are all sectors with people working together
+to achieve goals.
+
+Software Engineer
+Genova, Italy
+Esaote S.p.A., Internship
+February 2023– September 2023
+I had the opportunity to work for my master thesis at Esaote, a big company which is one of the leader
+companies in diagnostic imaging in the world. My main mission in the company was to assist my more
+experienced colleagues in completing the team’s objectives more quickly. Some tasks I covered were:- Held discussions and study for Matlab’s feasibility for deep learning.- Created framework for inference on final product.- Libraries used: TensorFlow, ClearML, tf2onnx, Deep Learning Toolbox (Matlab), ONNX Runtime.
+
+Academic Qualifications..............................................................................................
+○ 
+Universit`a degli Studi di Genova
+Master’s Degree in Robotics Engineering, 110/110
+Genova, Italy
+2021–Present
+Robotics engineering is an interdisciplinary field of engineering that combines computer science, computer
+programming, artificial intelligence, and robotics to create, design, and manage robotic equipment and
+machinery.
+
+Norwegian University of Science and Technology (NTNU)
+Erasmus+ Exchange Student Program
+Trondheim, Norway
+Aug. 2022– Dec. 2022
+Opportunity to study in deep different subjects in the Cybernetics Department, such as Industrial Embedded
+Systems and Optical Remote Sensing.
+
+Universit`a degli Studi di Genova
+Bachelor Degree in Biomedical Engineering, 100/110
+Genoa, Italy
+2018–2021
+Information engineering is the engineering discipline that deals with the generation, distribution, analysis,
+and use of information, data, and knowledge in systems. The field first became identifiable in the early 21st
+century. Biomedical engineering takes part of this process and elaborates it for medical
+
+Liceo Scientifico Luigi Lanfranconi
+High School Diploma, 81/100
+Genoa, Italy
+2013–2018
+The curriculum emphasises the link between the humanistic tradition and scientific culture. It covers a
+complete and widespread range of disciplines, including Italian language and literature, mathematics, physics,
+chemistry, biology, history, philosophy, Latin language and culture, English language and culture, art history
+and technical drawing.
+
+Santa Cruz High School
+Exchange Student Program
+Santa Cruz, California, USA
+2016–2017
+I’ve been living in Santa Cruz, California for almost one year of high school for an exchange student program
+to reach a proficiency English language level.

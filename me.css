@@ -1,0 +1,392 @@
+/* ================================================================
+   ME PAGE — me.css
+   Open spiral layout — full viewport, counter-clockwise
+   ================================================================ */
+
+/* ───────────── Layout Wrapper ───────────── */
+.journey-wrapper {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - var(--header-h));
+  overflow: hidden;
+}
+
+/* ───────────── Full-viewport container ───────────── */
+.solar-system {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: visible;
+  transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ───────────── SVG spiral ───────────── */
+.starfield-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.spiral-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.spiral-line {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: var(--spiral-len);
+  stroke-dashoffset: var(--spiral-len);
+  animation: drawSpiral 1.6s ease forwards 0.15s;
+}
+
+@keyframes drawSpiral {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ───────────── Center label ───────────── */
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.4s forwards;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.6;
+  }
+}
+
+/* ───────────── Planet node ───────────── */
+.planet-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  animation: planetPop 0.4s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes planetPop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ───────────── Planet circle ───────────── */
+.planet {
+  width: var(--planet-size, 56px);
+  height: var(--planet-size, 56px);
+  border-radius: 50%;
+  background-color: var(--border);
+  position: relative;
+  cursor: default;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+  animation: planetFloat var(--float-dur, 4s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+@keyframes planetFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Depth highlight */
+.planet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.20) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .planet::before {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 55%);
+}
+
+/* Hover ring */
+.planet::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1px dotted var(--text-muted);
+  opacity: 0;
+  transform: scale(0.8) rotate(0deg);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.planet-node:hover .planet::after,
+.planet-node.active .planet::after {
+  opacity: 0.6;
+  transform: scale(1) rotate(180deg);
+  animation: rotateOrbit 12s linear infinite 0.4s;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: scale(1) rotate(180deg);
+  }
+
+  to {
+    transform: scale(1) rotate(540deg);
+  }
+}
+
+.planet-node:hover .planet,
+.planet-node.active .planet {
+  transform: translateY(-3px) scale(1.07);
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.1);
+}
+
+[data-theme="dark"] .planet-node:hover .planet,
+[data-theme="dark"] .planet-node.active .planet {
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.2);
+}
+
+/* ───────────── Info label (always visible) ───────────── */
+.planet-info {
+  position: absolute;
+  width: 190px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.planet-node[data-side="right"] .planet-info {
+  left: calc(100% + 14px);
+  text-align: left;
+}
+
+.planet-node[data-side="left"] .planet-info {
+  right: calc(100% + 14px);
+  text-align: right;
+}
+
+/* Typography */
+.planet-info-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 1px;
+}
+
+.planet-info-year {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  margin-bottom: 3px;
+}
+
+.planet-info-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ───────────── Active planet highlight ───────────── */
+.planet-node.active .planet {
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--text-muted);
+  transform: scale(1.08);
+}
+
+.planet-node.active .planet::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ───────────── Detail panel (side-by-side) ───────────── */
+.detail-panel {
+  position: relative;
+  width: 0;
+  height: 100%;
+  background: var(--bg);
+  border-left: 0 solid var(--border);
+  z-index: 50;
+  overflow: hidden;
+  transition:
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-width 0.4s linear;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-panel.open {
+  width: 400px;
+  border-left-width: 1px;
+}
+
+/* Internal scrollable content */
+.detail-content {
+  padding: 60px 40px;
+  height: 100%;
+  overflow-y: auto;
+  min-width: 400px;
+  /* Prevent text wrapping during transit */
+}
+
+.detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.detail-close:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.detail-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.detail-year {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-list li {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.detail-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+
+/* ───────────── Mobile: vertical fallback ───────────── */
+@media (max-width: 700px) {
+  .solar-system {
+    height: auto;
+    min-height: calc(100vh - var(--header-h));
+    padding: 40px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .spiral-svg {
+    display: none;
+  }
+
+  .orbit-center {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 28px;
+    text-align: left;
+    opacity: 0.6;
+    animation: none;
+  }
+
+  .planet-node {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    animation-name: fadeUp;
+  }
+
+  .planet {
+    flex-shrink: 0;
+  }
+
+  .planet-info {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: auto !important;
+    transform: none !important;
+    text-align: left !important;
+    flex: 1;
+  }
+
+  .planet-info {
+    background: none;
+    padding: 0;
+  }
+}
