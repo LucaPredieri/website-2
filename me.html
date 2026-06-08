@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luca Predieri — Journey</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="me.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="site-brand">Luca Predieri</a>
+            <div class="header-right">
+                <nav class="site-nav">
+                    <a href="about.html" class="nav-link">
+                        <span class="lang-en">about</span>
+                        <span class="lang-it">chi sono</span>
+                    </a>
+                    <a href="pictures.html" class="nav-link">
+                        <span class="lang-en">moments</span>
+                        <span class="lang-it">attimi</span>
+                    </a>
+                    <a href="blog.html" class="nav-link">blog</a>
+                </nav>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Flex wrapper: spiral + detail panel side by side -->
+    <div class="journey-wrapper" id="journeyWrapper">
+        <div class="solar-system" id="solarSystem">
+            <canvas id="starfield" class="starfield-bg"></canvas>
+            <svg class="spiral-svg" id="spiralSvg" aria-hidden="true"></svg>
+            <div class="orbit-center">
+                <span class="lang-en">My Journey</span>
+                <span class="lang-it">Il Mio Viaggio</span>
+            </div>
+        </div>
+        <!-- Detail panel injected here by JS -->
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© <span id="year"></span> Luca Predieri. Built with HTML, CSS &amp; ♥</p>
+            <button class="lang-toggle" aria-label="Switch language" title="Switch language">
+                <span class="lang-icon"></span>
+            </button>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="me.js"></script>
+</body>
+
+</html>
