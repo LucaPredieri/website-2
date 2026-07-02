@@ -215,6 +215,7 @@ const SPIRAL = {
     activeIndex = i;
 
     panel.classList.add('open');
+    document.body.classList.add('modal-open');
 
     // Smooth layout update during transition
     const start = performance.now();
@@ -228,6 +229,7 @@ const SPIRAL = {
 
   function closePanel() {
     panel.classList.remove('open');
+    document.body.classList.remove('modal-open');
     planetNodes.forEach(n => n.classList.remove('active'));
     activeIndex = -1;
 
@@ -244,6 +246,12 @@ const SPIRAL = {
   panelClose.addEventListener('click', (e) => {
     e.stopPropagation();
     closePanel();
+  });
+
+  panel.addEventListener('click', (e) => {
+    if (e.target === panel) {
+      closePanel();
+    }
   });
 
   /* ── Build planet DOM nodes ── */
