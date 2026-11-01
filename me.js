@@ -125,7 +125,7 @@ const CHECKPOINTS = [
     },
   },
   {
-    year: '2023 – Present',
+    year: '2023 – 2026',
     title: { en: 'Moog Inc.', it: 'Moog Inc.' },
     desc: { en: 'Embedded Software Engineer.', it: 'Ingegnere Software Embedded.' },
     size: 86,
@@ -150,6 +150,21 @@ const CHECKPOINTS = [
         'Test in laboratorio con oscilloscopi, multimetri e alimentatori DC.',
         'Analisi e soluzioni per il Cyber Resilience Act (CRA).',
         'AI Ambassador per Moog Italia (utilizzo di Codex, Antigravity, Claude).',
+      ],
+    },
+  },
+  {
+    year: '2026 – Present',
+    title: { en: 'Generative Bionics', it: 'Generative Bionics' },
+    desc: { en: 'Embedded Software Engineer.', it: 'Ingegnere Software Embedded.' },
+    size: 90,
+    color: '#4f7e87',
+    details: {
+      en: [
+        'I help the actuators team evaluate and characterize motors and develop their software. The goal: more motion, less commotion.',
+      ],
+      it: [
+        'Nel team attuatori mi occupo di valutazione e caratterizzazione dei motori e sviluppo software. Obiettivo: far girare i motori, non le scatole.',
       ],
     },
   },
